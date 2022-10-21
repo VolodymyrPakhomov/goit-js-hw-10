@@ -82,7 +82,7 @@ function iutputClear() {
     population,
     languages,
   }) {
-    const langStr = Object.values(languages).join(', ');
+    const langStr = Object.values(languages).join('');
   
     return ` 
       <div class="country-list__item">

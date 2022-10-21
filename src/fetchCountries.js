@@ -1,14 +1,26 @@
-export const fetchCountries = name => {
+// export const fetchCountries = name => {
+//     return fetch(
+//       `https://restcountries.com/v3.1/name/${name}?fields=,name,capital,population,flags,languages`
+//     )
+//         .then(response => {
+//         if (!response.ok) {
+//         //   if (response.status === 404) {
+//         //     return [];
+//         //   }
+//           throw new Error(response.status);
+//         }
+//         return response.json();
+//       })
+//   };
+export default function fetchCountries(name) {
     return fetch(
-      `https://restcountries.com/v3.1/name/${name}?fields=,name,capital,population,flags,languages`
+      `https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`
     )
-        .then(response => {
+      .then(response => {
         if (!response.ok) {
-        //   if (response.status === 404) {
-        //     return [];
-        //   }
           throw new Error(response.status);
         }
         return response.json();
       })
-  };
+      .catch(err => console.log('error', err));
+  }

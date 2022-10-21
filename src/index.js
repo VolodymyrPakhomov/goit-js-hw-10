@@ -50,7 +50,7 @@ function iutputClear() {
   }
 
   function renderPrewiewMarkup(countries) {
-    const markup = countries.map(createPrewiewMarkup).join('&=======>~~~~~~');
+    const markup = countries.map(createPrewiewMarkup).join('');
     console.log(markup);
     countryList.innerHTML = markup;
   }
